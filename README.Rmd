@@ -1,0 +1,52 @@
+### Florida stand your ground law: Replication files for Humphreys, Gasparrini & Wiebe (2017a); JAMA Int Med 
+
+--------------------------------------------------------------------------------
+
+In this example code we reproduce the main results (Table 1 and Figures 1A & 1B) of analyses examining the impact of Florida's Stand Your Ground Law. 
+
+The data provided here are freely available from the Centers for Disease Control at:
+
+Centers for Disease Control and Prevention. Multiple Cause of Death 1999–2014 on CDC WONDER online database. https://wonder.cdc.gov/mcd-icd10.html. Published 2016. Accessed January 21, 2016. 
+
+The manuscript from which these findings are taken is:
+
+Humphreys, D.K., Gasparrini, A., Wiebe D.J. Evaluating the impact of Florida’s “stand your ground” self-defense lawon homicide and suicide by firearm: an interrupted time series study. *JAMA Intern Med.* 2017;**177**(1):44-50. [[freely available here](http://www.ag-myresearch.com/uploads/1/3/8/6/13864925/2016_humphreys_jamaim.pdf)]
+
+--------------------------------------------------------------------------------
+
+**1. R code:**
+
+**Stand your ground.R** provides the functions to compute the descriptive statistics and effect estimates shown in Table 1 of Humphreys et al., (2017).
+
+**Figures Stand your ground.R** provides the functions to reproduce Figure 1 (a and b).
+
+
+**2. Data:**
+
+The R files use data contained in two csv files: **syg_dat1.csv** and **syg_dat2.csv**. The file **syg_dat1.csv** contains the data required to compute pre-post impact estimates for Florida and comparison states for: homicide, firearm homicide, suicide, and suicide by firearm. The **syg_dat2.csv** is the long format required to run the formal test of differences (e.g. the difference-in-difference analysis) comparing Florida with comparison states.
+
+**3. Codebook**
+
+The codebook applies to the **syg_dat1.csv**, but for use with **syg_dat2.csv** users should drop the prefix identifiers (e.g. "fl_" or "c_"").
+
+|variable  | definition                                                                      | Source    |
+|----------|---------------------------------------------------------------------------------|-----------|
+|year      | year                                                                            |           |
+|month     | month                                                                           |           |
+|fl_hom    | monthly count of homicide in Florida                                            | CDC       |
+|fl_fhom   | monthly count of firearm homicide in Florida                                    | CDC       |
+|fl_suic   | monthly count of suicide in Florida                                             | CDC       |
+|fl_fsuic  | monthly count of firearm suicide in Florida                                     | CDC       |
+|c_hom     | monthly count of homicide in comparison states                                  | CDC       |
+|c_fhom    | monthly count of firearm homicide in comparison states                          | CDC       |
+|c_suic    | monthly count of suicide in comparison states                                   | CDC       |
+|c_fsuic   | monthly count of firearm suicide in comparison states                           | CDC       |
+|time      | cumulative time in months                                                       |           |
+|sign      | pre-post binary variable of date the law was signed, 0= before, 1=after         |           |
+|Effective | pre-post binary variable of date the law came into effect, 0= before, 1=after   |           |
+|fl_stdpop | Florida population                                                              | US Census |
+|c_stdpop  | Comparison state combined population                                            | US Census |
+|c2_stdpop | Comparison states combined population omitting New Jersey                       | US Census |
+
+  
+Download as a ZIP file using the green button *Clone or download* above.
